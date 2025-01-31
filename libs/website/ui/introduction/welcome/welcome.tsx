@@ -4,21 +4,85 @@ import { Socials } from '@website/shared/ui/socials'
 /* import { useEffect, useState } from 'react' */
 
 /* interface WelcomeData {
+/* import { useEffect, useState } from 'react'
+* import { fetchWelcomeData } from './api/welcome.api'
+*
+* interface WelcomeData {
+>>>>>>> d54d9bea (refactor(web): scaffold CMS to website connection)
 *   title: string
 *   organization: string
 *   date: string
 *   callToAction: string
+<<<<<<< HEAD
 * }
 *
-* interface Media {
-*   src: string
-*   alt: string
-* }
 *
+=======
+* } */
 
+/* /* async function fetchWelcomeData(): Promise<WelcomeData | null> {
+* *  const query = `
+* *    query {
+* *      Welcomes {
+* *        docs {
+* *          title
+* *          organization
+* *          date
+* *          callToAction
+* *        }
+* *      }
+* *    }
+* *  `
 *
-* async function fetchWelcomeData(): Promise<WelcomeData | null> {
+* *  try {
+* *    const response = await fetch(`${import.meta.env.VITE_API_URL}/api/graphql`, {
+* *      method: 'POST',
+* *      headers: {
+* *        'Content-Type': 'application/json',
+* *      },
+* *      body: JSON.stringify({ query }),
+* *    })
+*
+* *    if (!response.ok) {
+* *      throw new Error(`HTTP error! status: ${response.status}`)
+* *    }
+*
+* *    const data = await response.json()
+* *    const welcomeData = data.data.Welcomes.docs[0] // Assuming only one document or taking the first one
+* *    return {
+* *      title: welcomeData.title,
+* *      organization: welcomeData.organization,
+* *      date: welcomeData.date,
+* *      callToAction: welcomeData.callToAction,
+* *    }
+* *  }
+* *  catch (error) {
+* *    console.error('Failed to fetch welcome data:', error)
+* *   return null
+* *  }
+* }  */
+
+/* const [welcomeData, setWelcomeData] = useState<WelcomeData | null>(null) */
+
+/* useEffect(() => {
+*   async function getData() {
+*     const data = await fetchWelcomeData()
+*     setWelcomeData(data)
+*   }
+*   getData()
+* }, [])
+ */
+/* const welcomeData = {
+*   title: 'Hello, World',
+*   organization: 'cuHacking',
+*   date: 'Mar. 14 - 16 2025',
+*   callToAction: 'In the meantime, check out all the cool stuff we\'re working on!',
+* } */
+
+/* async function fetchWelcomeData(): Promise<WelcomeData | null> {
+*
 *   const query = `
+*
 *     query {
 *       Welcomes {
 *         docs {
@@ -59,27 +123,21 @@ import { Socials } from '@website/shared/ui/socials'
 *   }
 * } */
 
+interface Media {
+  src: string
+  alt: string
+}
+
 interface IntroProps {
   socials: { link: string, media: Media, name: string }[]
 }
 export function Welcome({ socials }: IntroProps) {
-  /* const [welcomeData, setWelcomeData] = useState<WelcomeData | null>(null) */
-
-  /* useEffect(() => {
-*   async function getData() {
-*     const data = await fetchWelcomeData()
-*     setWelcomeData(data)
-*   }
-*   getData()
-* }, [])
- */
   const welcomeData = {
     title: 'Hello, World',
     organization: 'cuHacking',
-    date: 'Mar. 14 - 16 2025',
-    callToAction: 'In the meantime, check out all the cool stuff we\'re working on!',
+    date: 'Mar 14th - 16th',
+    callToAction: 'In the meantime, check out some cool stuff :)',
   }
-
   return (
     welcomeData
       ? (
