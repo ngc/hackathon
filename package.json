@@ -32,6 +32,7 @@
     "lighthouse": "pnpm exec serve lighthouse-report --no-clipboard & sleep 1 && xdg-open 'http://localhost:3000/latest-report'"
   },
   "dependencies": {
+    "@faker-js/faker": "^9.4.0",
     "@lexical/headless": "0.21.0",
     "@lexical/html": "0.21.0",
     "@lexical/link": "0.21.0",
